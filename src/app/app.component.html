@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<body>
+<div style="text-align:center" class="outer">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+ <div class="inner">
+ <h2>Things To Be Done</h2>
+ 
+ <input class="textbox" type="text" [(ngModel)]="NewItem" >
+ <button (click)="addToList()" class="addbutton">ADD</button>
+ 
+ <ul *ngFor="let i of ToDoList; let ind=index">
+ <li ><span (click)=" markCompleted(ind)" class="sp1">Done</span>{{i}}<span (click)="removeFromList(ind)" class="sp2">Remove</span>
+ </li>
+ </ul>
+</div>
+
+<div class="done">
+<h2>Things Done</h2>
+ <ul class="ul2" *ngFor="let c of Completed; let ind=index">
+ <li >{{c}}<span (click)="removeFromCompleted(ind)" class="sp2">x</span>
+ </li>
+ </ul>
+
+</div>
+
+</div>
+</body>
